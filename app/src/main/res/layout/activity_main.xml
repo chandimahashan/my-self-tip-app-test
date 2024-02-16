@@ -7,12 +7,81 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/YouAmount"
+        android:layout_width="91dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:text="You amount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/SetTip"
+        android:layout_width="91dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:text="Set Tip"
+        app:layout_constraintStart_toStartOf="@+id/YouAmount"
+        app:layout_constraintTop_toBottomOf="@+id/YouAmount" />
+
+    <EditText
+        android:id="@+id/YouAmountEnter"
+        android:layout_width="150dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:ems="15"
+        android:inputType="numberDecimal"
+        android:maxLength="15"
+        app:layout_constraintStart_toEndOf="@+id/YouAmount"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/SetTipChange"
+        android:layout_width="170dp"
+        android:layout_height="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/SetTip"
+        app:layout_constraintStart_toStartOf="@+id/YouAmountEnter"
+        app:layout_constraintTop_toTopOf="@+id/SetTip" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top" />
+
+    <TextView
+        android:id="@+id/TipAmount"
+        android:layout_width="91dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="40dp"
+        android:text="Tip Amount"
+        app:layout_constraintStart_toStartOf="@+id/SetTip"
+        app:layout_constraintTop_toBottomOf="@+id/SetTip" />
+
+    <TextView
+        android:id="@+id/TipAmountYouAdd"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/TipAmount"
+        app:layout_constraintStart_toStartOf="@+id/SetTipChange"
+        app:layout_constraintTop_toTopOf="@+id/TipAmount" />
+
+    <TextView
+        android:id="@+id/TotalAmount"
+        android:layout_width="100dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="40dp"
+        android:text="Total Amount"
+        app:layout_constraintStart_toStartOf="@+id/TipAmount"
+        app:layout_constraintTop_toBottomOf="@+id/TipAmount" />
+
+    <TextView
+        android:id="@+id/TotalAmountYouPly"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/TotalAmount"
+        app:layout_constraintStart_toStartOf="@+id/TipAmountYouAdd"
+        app:layout_constraintTop_toTopOf="@+id/TotalAmount" />
 </androidx.constraintlayout.widget.ConstraintLayout>
