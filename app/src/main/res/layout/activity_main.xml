@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-3dp">
+
 
     <TextView
         android:id="@+id/YouAmount"
@@ -15,17 +18,6 @@
         android:text="You amount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/SetTip"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:text="Set Tip Percentage = 0%"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/YouAmount"
-        app:layout_constraintTop_toBottomOf="@+id/YouAmount" />
 
     <EditText
         android:id="@+id/YouAmountEnter"
@@ -39,14 +31,6 @@
         app:layout_constraintStart_toEndOf="@+id/YouAmount"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SeekBar
-        android:id="@+id/SetTipChange"
-        android:layout_width="170dp"
-        android:layout_height="17dp"
-        app:layout_constraintBottom_toBottomOf="@+id/SetTip"
-        app:layout_constraintStart_toStartOf="@+id/YouAmountEnter"
-        app:layout_constraintTop_toTopOf="@+id/SetTip" />
-
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
         android:layout_width="wrap_content"
@@ -54,29 +38,19 @@
         app:barrierDirection="top" />
 
     <TextView
-        android:id="@+id/TipAmount"
-        android:layout_width="91dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="40dp"
-        android:text="Tip Amount"
-        app:layout_constraintStart_toStartOf="@+id/EnterTipPercentage"
-        app:layout_constraintTop_toBottomOf="@+id/EnterTipPercentage" />
-
-    <TextView
-        android:id="@+id/TipAmountYouAdd"
-        android:layout_width="120dp"
-        android:layout_height="25dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/TipAmount"
-        app:layout_constraintStart_toStartOf="@+id/SetTipChange"
-        app:layout_constraintTop_toTopOf="@+id/TipAmount" />
+        android:id="@+id/EnterTipPercentage"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="156dp"
+        android:text="Enter Tip Percentage %"
+        app:layout_constraintStart_toStartOf="@+id/YouAmount"
+        app:layout_constraintTop_toBottomOf="@+id/YouAmount" />
 
     <TextView
         android:id="@+id/TotalAmount"
         android:layout_width="100dp"
         android:layout_height="17dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:text="Total Amount"
         app:layout_constraintStart_toStartOf="@+id/TipAmount"
         app:layout_constraintTop_toBottomOf="@+id/TipAmount" />
@@ -89,16 +63,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/TotalAmount"
         app:layout_constraintStart_toStartOf="@+id/TipAmountYouAdd"
-        app:layout_constraintTop_toTopOf="@+id/TotalAmount" />
-
-    <TextView
-        android:id="@+id/EnterTipPercentage"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:text="Enter Tip Percentage %"
-        app:layout_constraintStart_toStartOf="@+id/SetTip"
-        app:layout_constraintTop_toBottomOf="@+id/SetTip" />
+        app:layout_constraintTop_toTopOf="@+id/TotalAmount"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/EnterPercentage"
@@ -108,8 +74,113 @@
         android:inputType="number"
         android:maxLength="2"
         app:layout_constraintBottom_toBottomOf="@+id/EnterTipPercentage"
-        app:layout_constraintEnd_toEndOf="@+id/SetTipChange"
-        app:layout_constraintStart_toStartOf="@+id/SetTipChange"
-        app:layout_constraintTop_toTopOf="@+id/EnterTipPercentage" />
+        app:layout_constraintStart_toStartOf="@+id/YouAmountEnter"
+        app:layout_constraintTop_toTopOf="@+id/EnterTipPercentage"
+        app:layout_constraintVertical_bias="0.3" />
 
+    <TextView
+        android:id="@+id/TipAmount"
+        android:layout_width="91dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="48dp"
+        android:text="Tip Amount"
+        app:layout_constraintStart_toStartOf="@+id/EnterTipPercentage"
+        app:layout_constraintTop_toBottomOf="@+id/EnterTipPercentage" />
+
+    <TextView
+        android:id="@+id/TipAmountYouAdd"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/TipAmount"
+        app:layout_constraintStart_toStartOf="@+id/EnterPercentage"
+        app:layout_constraintTop_toTopOf="@+id/TipAmount"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/tipbutton"
+        android:onClick="defaultTipButton"
+        android:text="10%"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/tipbutton"
+        android:onClick="defaultTipButton"
+        android:text="15%"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/tipbutton"
+        android:onClick="defaultTipButton"
+        android:text="20%"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/tipbutton"
+        android:onClick="defaultTipButton"
+        android:text="25%"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/tipbutton"
+        android:onClick="defaultTipButton"
+        android:text="30%"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/tipbutton"
+        android:onClick="defaultTipButton"
+        android:text="35%"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintTop_toTopOf="parent" /><![CDATA[
+
+
+ />
+
+
+
+]]>
 </androidx.constraintlayout.widget.ConstraintLayout>
